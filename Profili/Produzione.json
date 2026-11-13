@@ -1,0 +1,87 @@
+{
+  "Nome": "Produzione / magazzino",
+  "Descrizione": "Postazione condivisa in reparto: minimo indispensabile, nessuna sospensione, desktop remoto per assistenza, blocco schermo disattivato.",
+  "Apps": [
+    "Google.Chrome",
+    "7zip.7zip",
+    "Adobe.Acrobat.Reader.64-bit",
+    "AnyDeskSoftwareGmbH.AnyDesk"
+  ],
+  "RimuoviApp": [
+    "Microsoft.BingNews",
+    "Microsoft.BingWeather",
+    "Microsoft.GamingApp",
+    "Microsoft.XboxApp",
+    "Microsoft.Xbox.TCUI",
+    "Microsoft.XboxGameOverlay",
+    "Microsoft.XboxGamingOverlay",
+    "Microsoft.XboxIdentityProvider",
+    "Microsoft.XboxSpeechToTextOverlay",
+    "Microsoft.MicrosoftSolitaireCollection",
+    "Microsoft.ZuneMusic",
+    "Microsoft.ZuneVideo",
+    "Microsoft.People",
+    "Microsoft.WindowsFeedbackHub",
+    "Microsoft.GetHelp",
+    "Microsoft.Getstarted",
+    "Microsoft.MicrosoftOfficeHub",
+    "Microsoft.SkypeApp",
+    "Microsoft.Todos",
+    "Clipchamp.Clipchamp",
+    "Microsoft.WindowsMaps",
+    "Microsoft.PowerAutomateDesktop",
+    "Microsoft.549981C3F5F10",
+    "Microsoft.MixedReality.Portal",
+    "Microsoft.Microsoft3DViewer",
+    "Microsoft.Copilot",
+    "Microsoft.BingSearch",
+    "MicrosoftTeams",
+    "Microsoft.YourPhone",
+    "Microsoft.OutlookForWindows",
+    "Microsoft.Windows.DevHome"
+  ],
+  "Impostazioni": {
+    "FusoOrario": "W. Europe Standard Time",
+    "EstensioniFile": true,
+    "FileNascosti": false,
+    "EsploraFileSuQuestoPC": true,
+    "MenuContestualeClassico": true,
+    "BarraSinistra": true,
+    "RicercaBarra": 1,
+    "NoWidget": true,
+    "NoCopilot": true,
+    "NoSuggerimenti": true,
+    "Telemetria": 1,
+    "DesktopRemoto": true,
+    "SMB1": false,
+    "AvvioRapido": false,
+    "Ibernazione": false,
+    "IndividuazioneRete": true,
+    "DisattivaBlocco": true
+  },
+  "Energia": {
+    "Piano": "Prestazioni",
+    "SpegnimentoSchermoMin": {
+      "AC": 0,
+      "DC": 0
+    },
+    "SospensioneMin": {
+      "AC": 0,
+      "DC": 0
+    },
+    "NoSospensioneDisco": true,
+    "PulsanteAlimentazioneSpegne": true
+  },
+  "Unita": [
+    {
+      "Lettera": "S",
+      "Percorso": "\\\\SERVER\\Dati"
+    }
+  ],
+  "Collegamenti": [
+    {
+      "Nome": "Gestionale",
+      "Url": "http://gamma.azienda.local"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "Nome": "Base",
+  "Descrizione": "Pulizia e impostazioni standard, solo browser e utility. Punto di partenza per qualsiasi PC.",
+  "Apps": [
+    "Google.Chrome",
+    "7zip.7zip",
+    "Adobe.Acrobat.Reader.64-bit",
+    "VideoLAN.VLC"
+  ],
+  "RimuoviApp": [
+    "Microsoft.BingNews",
+    "Microsoft.BingWeather",
+    "Microsoft.GamingApp",
+    "Microsoft.XboxApp",
+    "Microsoft.Xbox.TCUI",
+    "Microsoft.XboxGameOverlay",
+    "Microsoft.XboxGamingOverlay",
+    "Microsoft.XboxIdentityProvider",
+    "Microsoft.XboxSpeechToTextOverlay",
+    "Microsoft.MicrosoftSolitaireCollection",
+    "Microsoft.ZuneMusic",
+    "Microsoft.ZuneVideo",
+    "Microsoft.People",
+    "Microsoft.WindowsFeedbackHub",
+    "Microsoft.GetHelp",
+    "Microsoft.Getstarted",
+    "Microsoft.MicrosoftOfficeHub",
+    "Microsoft.SkypeApp",
+    "Microsoft.Todos",
+    "Clipchamp.Clipchamp",
+    "Microsoft.WindowsMaps",
+    "Microsoft.PowerAutomateDesktop",
+    "Microsoft.549981C3F5F10",
+    "Microsoft.MixedReality.Portal",
+    "Microsoft.Microsoft3DViewer",
+    "Microsoft.Copilot",
+    "Microsoft.BingSearch",
+    "MicrosoftTeams",
+    "Microsoft.YourPhone"
+  ],
+  "Impostazioni": {
+    "FusoOrario": "W. Europe Standard Time",
+    "EstensioniFile": true,
+    "FileNascosti": false,
+    "EsploraFileSuQuestoPC": true,
+    "MenuContestualeClassico": true,
+    "BarraSinistra": true,
+    "RicercaBarra": 1,
+    "NoWidget": true,
+    "NoCopilot": true,
+    "NoSuggerimenti": true,
+    "Telemetria": 1,
+    "DesktopRemoto": false,
+    "SMB1": false,
+    "AvvioRapido": false,
+    "Ibernazione": false,
+    "IndividuazioneRete": true
+  },
+  "Energia": {
+    "Piano": "Bilanciato",
+    "SpegnimentoSchermoMin": {
+      "AC": 15,
+      "DC": 5
+    },
+    "SospensioneMin": {
+      "AC": 0,
+      "DC": 30
+    },
+    "NoSospensioneDisco": true,
+    "PulsanteAlimentazioneSpegne": true
+  }
+}

@@ -1,0 +1,70 @@
+name: Build VM Setup Suite
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verifica sintassi
+        shell: pwsh
+        run: .\Tests\Test-Syntax.ps1
+
+      - name: Test funzionale
+        shell: pwsh
+        run: $t=[IO.File]::ReadAllText("VMSetup.Engine.psm1"); Import-Module (New-Module -Name VMSetup.Engine -ScriptBlock ([scriptblock]::Create($t))) -Force; $p=@(Get-SsProfiles -Folder .\Profili); "Profili: $($p.Count)"; if ($p.Count -lt 4) { throw "profili mancanti" }; (Get-SsSteps).Count
+      - name: Installa Inno Setup 6
+        shell: pwsh
+        run: choco install innosetup --no-progress -y
+      - name: Compila exe + installer
+        shell: powershell
+        run: |
+          Set-ExecutionPolicy -Scope Process Bypass -Force
+          $v = if ($env:GITHUB_REF -like 'refs/tags/v*') { $env:GITHUB_REF.Substring(11) } else { '1.0.' + $env:GITHUB_RUN_NUMBER }
+          .\Build.ps1 -Version $v
+          Copy-Item "dist\VMSetupSuite_Portable_$v.zip" dist\VMSetupSuite_Portable.zip -Force
+          Get-ChildItem dist\VMSetupSuite_Setup_*.exe | Select-Object -First 1 | Copy-Item -Destination dist\VMSetupSuite_Setup.exe -Force
+          .\Make-Portable.ps1 -Version $v
+          "VERSIONE=$v" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Carica artefatti
+        uses: actions/upload-artifact@v4
+        with:
+          name: VMSetupSuite
+          path: |
+            dist/VMSetupSuite.exe
+            dist/VMSetupSuite_Portable_*.zip
+            dist/VMSetupSuite_Portable.cmd
+            dist/VMSetupSuite_Setup_*.exe
+      - name: Tag "latest"
+        if: github.ref == 'refs/heads/main'
+        shell: pwsh
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git tag -f latest; git push -f origin latest
+      - name: Release "latest"
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Ultima build (${{ env.VERSIONE }})"
+          body: "Build automatica dall'ultimo commit su main. Link fissi: VMSetupSuite_Portable.zip e VMSetupSuite_Setup.exe"
+          prerelease: true
+          files: |
+            dist/VMSetupSuite_Portable.zip
+            dist/VMSetupSuite_Portable.cmd
+            dist/VMSetupSuite_Setup.exe
+      - name: Release per tag v*
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/VMSetupSuite_Portable_*.zip
+            dist/VMSetupSuite_Setup_*.exe
