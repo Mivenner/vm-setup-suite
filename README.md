@@ -1,4 +1,18 @@
-# VM Setup Suite 1.0
+<!-- header -->
+<p align="center"><img src="logo.png" width="96" alt="vm technology"></p>
+<h1 align="center">VM Setup Suite</h1>
+<p align="center">Prepara un PC Windows appena installato partendo da un profilo JSON: pulizia, app, impostazioni, stampanti, utenti, BitLocker.</p>
+<p align="center">
+  <a href="https://github.com/Mivenner/vm-setup-suite/actions/workflows/build.yml"><img src="https://github.com/Mivenner/vm-setup-suite/actions/workflows/build.yml/badge.svg" alt="Build"></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4" alt="Windows 10 | 11">
+  <img src="https://img.shields.io/badge/PowerShell-5.1%20%7C%207-5391FE" alt="PowerShell 5.1 | 7">
+</p>
+
+**Download dell'ultima build:** [File singolo .cmd](https://github.com/Mivenner/vm-setup-suite/releases/latest/download/VMSetupSuite_Portable.cmd) · [Zip portable](https://github.com/Mivenner/vm-setup-suite/releases/latest/download/VMSetupSuite_Portable.zip) · [Installer](https://github.com/Mivenner/vm-setup-suite/releases/latest/download/VMSetupSuite_Setup.exe)
+
+Altri strumenti vm technology: [Migration Suite](https://github.com/Mivenner/vm-migration-suite) · [Health Check](https://github.com/Mivenner/vm-health-check) · [Setup Suite](https://github.com/Mivenner/vm-setup-suite) · [Printer Manager](https://github.com/Mivenner/vm-printer-manager)
+
+---
 
 Prepara un PC Windows 10/11 appena installato in base a un **profilo** (Base, Ufficio, Agente, Produzione, o i tuoi): rimozione app preinstallate, debloat opzionale (Win11Debloat), installazione app con winget, impostazioni Windows per l'utente corrente **e** per gli utenti futuri, energia, stampanti, unità di rete, utenti locali, collegamenti, sfondo, BitLocker, Windows Update, join al dominio.
 
