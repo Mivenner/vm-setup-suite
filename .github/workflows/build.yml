@@ -57,7 +57,8 @@ jobs:
           tag_name: latest
           name: "Ultima build (${{ env.VERSIONE }})"
           body: "Build automatica dall'ultimo commit su main. Link fissi: VMSetupSuite_Portable.zip e VMSetupSuite_Setup.exe"
-          prerelease: true
+          prerelease: false
+          make_latest: true
           files: |
             dist/VMSetupSuite_Portable.zip
             dist/VMSetupSuite_Portable.cmd
